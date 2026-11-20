@@ -26,10 +26,10 @@ app.get('/', async (req, res) => {
         const data = resp.data.results;
         res.render('homepage', { title: 'Plants | Integrating With HubSpot I Practicum', data });
     } catch (error) {
-        console.error(error);
+        console.error(error.response ? error.response.data : error);
+        res.status(500).send('Something went wrong. Check the terminal for details.');
     }
 });
-
 // TODO: ROUTE 2 - Create a new app.get route for the form to create or update new custom object data. Send this data along in the next route.
 
 app.get('/update-cobj', (req, res) => {
@@ -57,7 +57,8 @@ app.post('/update-cobj', async (req, res) => {
         await axios.post(url, newPlant, { headers });
         res.redirect('/');
     } catch (error) {
-        console.error(error);
+        console.error(error.response ? error.response.data : error);
+        res.status(500).send('Something went wrong. Check the terminal for details.');
     }
 });
 
