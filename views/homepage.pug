@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Plants
+        p.add-link
+            a(href="/update-cobj") Add to this table
+        table.plants
+            thead
+                tr
+                    th Name
+                    th Species
+                    th Height (cm)
+            tbody
+                each record in data
+                    tr
+                        td= record.properties.name
+                        td= record.properties.species
+                        td= record.properties.height_cm
