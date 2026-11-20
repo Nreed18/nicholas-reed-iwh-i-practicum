@@ -56,3 +56,29 @@ input[type="submit"] {
     padding: .375rem 1rem;
     margin-top: 10px;
 }
+
+table {
+    width: calc(100% - 2rem);
+    max-width: 960px;
+    margin: 1rem;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: .5rem .75rem;
+    border-bottom: solid 1px lightgrey;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f5;
+}
+
+tr:nth-child(even) td {
+    background-color: #fafafa;
+}
+
+body > a {
+    display: inline-block;
+    margin: 0 1rem;
+}
