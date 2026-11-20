@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Add a Plant
+        .form-wrapper
+            form(action="/update-cobj" method="POST")
+                label(for="name") Name
+                input(type="text" id="name" name="name")
+                label(for="species") Species
+                input(type="text" id="species" name="species")
+                label(for="height_cm") Height (cm)
+                input(type="text" id="height_cm" name="height_cm")
+                input(type="submit" value="Submit")
+            a(href="/") Return to the homepage
